@@ -1,0 +1,14 @@
+<Context docBase="UniLibraryWeb" path="/UniLibraryWeb" reloadable="true">
+	 
+	<Resource name="jdbc/UniLibraryDS" auth="Container"
+		type="javax.sql.DataSource" maxActive="2" maxIdle="30"
+		maxWait="10000" username="root" password="my-secret-pw"
+		driverClassName="com.mysql.jdbc.Driver"
+		url="jdbc:mysql://mysql:3306/uni_library_db?autoReconnect=true" />
+		
+	
+	<!-- 
+	 <ResourceLink name="jdbc/UniLibraryDS" global="jdbc/UniLibraryDS"    type="javax.sql.DataSource" />
+	  -->
+	 
+</Context>
