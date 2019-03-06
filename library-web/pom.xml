@@ -15,6 +15,26 @@
 
 
 
+<distributionManagement>
+	<repository>
+			<id>nexus-repo</id>
+			<name>My releases</name>
+			<url>http://192.168.17.8:8081/repository/maven-releases/</url>
+		</repository>
+		<!-- Publish snapshots here -->
+		<snapshotRepository>
+			<id>nexus-repo</id>
+			<name>My snapshots</name>
+			<url>http://192.168.17.8:8081/repository/maven-snapshots/</url>
+		</snapshotRepository>
+		<site>
+			<id>nexus-repo</id>
+			<url>dav:http://192.168.17.8:8081/repository/sites/</url>
+		</site>
+</distributionManagement>
+
+
+
     <dependencies>
           <dependency>
       <groupId>javax.servlet</groupId>
@@ -77,7 +97,33 @@
 			<path>/library-Web</path>
 		</configuration>
 	</plugin>
+	
+	<plugin>
+		<groupId>org.apache.maven.plugins</groupId>
+		<artifactId>maven-site-plugin</artifactId>
+		<version>3.7.1</version>
+
+		<dependencies>
+			<dependency>
+				<groupId>org.apache.maven.wagon</groupId>
+				<artifactId>wagon-webdav-jackrabbit</artifactId>
+				<version>2.6</version>
+			</dependency>
+		</dependencies>
+	</plugin>
     
+    
+    <plugin>
+		<groupId>org.codehaus.mojo</groupId>
+		<artifactId>cobertura-maven-plugin</artifactId>
+		<version>2.6</version>
+		<configuration>
+			<formats>
+				<format>html</format>
+				<format>xml</format>
+			</formats>
+		</configuration>
+	</plugin>
     
     </plugins>
   
