@@ -55,6 +55,9 @@
     
     
     
+  <build>
+  
+  
    <plugins>
      
       
@@ -77,6 +80,8 @@
     
     
     </plugins>
+  
+  </build>
     
     
     
